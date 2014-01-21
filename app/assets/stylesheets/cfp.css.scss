@@ -1,0 +1,55 @@
+body {
+  background-color: #ddd;
+}
+
+.container {
+  background: #fff;
+}
+
+.intro {
+  text-align: center;
+}
+
+.intro h1 {
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.intro h1 .small {
+  padding-left: 0px
+}
+
+
+// Errors
+.bs-callout {
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 3px solid #eee;
+}
+
+.bs-callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.bs-callout p:last-child {
+    margin-bottom: 0;
+}
+
+.bs-callout-warning {
+    background-color: #faf8f0;
+    border-color: #faebcc;
+}
+
+.bs-callout-warning h4 {
+    color: #8a6d3b;
+}
+
+.bs-callout-danger {
+    background-color: #fdf7f7;
+    border-color: #eed3d7;
+}
+
+.bs-callout-danger h4 {
+    color: #b94a48;
+}
