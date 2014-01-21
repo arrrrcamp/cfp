@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'mysql2'
 gem 'omniauth-openminds'
 gem 'pry', require: false
+gem 'redcarpet'
 gem 'sass-rails', '~> 4.0.0'
 gem 'simple_form', '~> 3.0.1'
 gem 'therubyracer'

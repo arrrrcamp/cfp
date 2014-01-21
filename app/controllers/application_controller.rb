@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def home
     render '/pages/home'
   end
+
+  def coc
+    render '/pages/coc'
+  end
 end
