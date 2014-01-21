@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title ArrrrCamp 2014 Call for Speakers
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .container
+      .header
+        %ul.nav.nav-pills.pull-right
+          %li.active
+            %a{href: "http://arrrrcamp.be"} ArrrrCamp
+          %li
+            %a{href: "/coc"} CoC
+        %h3.text-muted ArrrrCamp Call for Speakers
+      = yield
+      .footer
+        %p ArrrrCamp 2014
