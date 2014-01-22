@@ -2,9 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.2'
 
+gem "carrierwave", "~> 0.9.0"
 gem 'coffee-rails', '~> 4.0.0'
 gem 'haml-rails'
 gem 'jquery-rails'
+gem "mini_magick", "~> 3.6.0"
 gem 'mysql2'
 gem 'omniauth-openminds'
 gem 'pry', require: false

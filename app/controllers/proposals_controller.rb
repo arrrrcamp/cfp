@@ -40,6 +40,7 @@ private
       :twitter,
       :recidence,
       :motivation,
+      :avatar
     )
   end
 end
