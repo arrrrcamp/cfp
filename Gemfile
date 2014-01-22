@@ -14,3 +14,7 @@ gem 'simple_form', '~> 3.0.1'
 gem 'therubyracer'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+
+group :development, :test do
+  gem 'mailcatcher', github: 'sj26/mailcatcher', require: false
+end
