@@ -1,6 +1,5 @@
 = simple_form_for @proposal do |form|
   %h3 About your talk
-  = form.input :email, placeholder: 'your@email.com'
   = form.input :title do
     = form.text_field :title, placeholder: 'Arrrrsome stuff', class: 'string optional form-control'
     %span.help-block Should not be the final title
@@ -8,7 +7,10 @@
   = form.input :tags, placeholder: 'Ruby, Rails, Motivational, coding, testing,...'
   = form.input :motivation, as: :text, placeholder: 'Why do you want to speak at ArrrrCamp? Why this talk? What will people learn or remember'
   %h2 About you
+  %p
+    All this information will be scrambled when you submit your proposal so we have no clue who you are when we go through all the propsals.
   = form.input :name, placeholder: 'Captain Blackbeard'
+  = form.input :email, placeholder: 'your@email.com'
   = form.input :github, placeholder: 'arrrrcamp'
   = form.input :twitter, placeholder: '@arrrrcamp'
   = form.input :recidence, placeholder: 'Where do you live'
