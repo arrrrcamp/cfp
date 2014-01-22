@@ -1,0 +1,5 @@
+= simple_form_for @proposal do |form|
+  = form.hidden_field :identifier, value: @proposal.identifier
+  = render form
+  .form-actions
+    = form.button :submit, 'Update your proposal', class: 'btn btn-success'
