@@ -8,7 +8,7 @@
   %body
     .container
       .header
-        = link_to "<- back to ArrrrCamp", 'http://arrrrcamp.be', class: 'back'
+        = link_to "<- back to ArrrrCamp", 'http://2014.arrrrcamp.be', class: 'back'
       .intro
         %h1 ArrrrCamp#{ content_tag :small, '2014'}
         %h2
@@ -23,8 +23,3 @@
       = yield
       .footer
         %p ArrrrCamp 2014
-        %ul.nav.nav-pills.pull-right
-          %li
-            %a{href: "proposals/new"} Submit proposal
-          %li
-            %a{href: "/coc"} CoC
