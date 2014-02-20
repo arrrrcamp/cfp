@@ -29,6 +29,6 @@ private
 
   def notify_everybody
     ProposalNotifier.notify_speaker(self).deliver
-    ProposalNotifier.notify_arrcampt(self).deliver
+    ProposalNotifier.notify_captain(self).deliver
   end
 end
