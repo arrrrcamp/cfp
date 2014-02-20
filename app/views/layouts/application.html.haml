@@ -20,6 +20,10 @@
         .bs-callout.bs-callout-danger
           %h4 Oh snap
           %p= flash[:error]
+      - if flash[:notice].present?
+        .bs-callout
+          %h4 Arrrrsome! (ø_o)
+          %p= flash[:notice]
       = yield
       .footer
         %p ArrrrCamp 2014
