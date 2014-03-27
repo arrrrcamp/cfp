@@ -1,10 +1,12 @@
 %table.table.table-striped
   %thead
     %tr
+      %th #
       %th Title (# comments)
   %tbody
-    - @proposals.each do |proposal|
+    - @proposals.each_with_index do |proposal, index|
       %tr
+        %td{style: 'width:10px'}= index + 1
         %td
           = link_to proposal.title, [:crew, proposal]
           %span.badge= proposal.comments.count
