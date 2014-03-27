@@ -1,5 +1,10 @@
-%h1 Hi
-
-%ol
-  - @proposals.each do |proposal|
-    %li= link_to proposal.title, [:crew, proposal]
+%table.table.table-striped
+  %thead
+    %tr
+      %th Title (# comments)
+  %tbody
+    - @proposals.each do |proposal|
+      %tr
+        %td
+          = link_to proposal.title, [:crew, proposal]
+          %span.badge= proposal.comments.count
