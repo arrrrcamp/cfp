@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 gem "airbrake", "~> 3.1.15"
+gem "bcrypt-ruby", :require => "bcrypt"
 gem "carrierwave", "~> 0.9.0"
 gem 'coffee-rails', '~> 4.0.0'
 gem 'haml-rails'

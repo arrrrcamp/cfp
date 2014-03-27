@@ -1,0 +1,22 @@
+%h3= @proposal.title
+
+%h4 Description
+.well= @proposal.description
+
+%h4 Tags
+.well= @proposal.tags
+
+%h4 Motivation
+.well= @proposal.motivation
+
+%h4 Comments
+- @proposal.comments.all.each do |comment|
+  .panel.panel-default
+    .panel-heading= comment.user.username
+    .panel-body= comment.body
+
+%h5 Post a new comment
+.well.well-sm
+  = simple_form_for [:crew, @proposal, @proposal.comments.build] do |form|
+    = form.input :body
+    = form.submit

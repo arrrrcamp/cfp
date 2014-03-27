@@ -9,6 +9,10 @@
     .container
       .header
         = link_to "<- back to ArrrrCamp", 'http://2014.arrrrcamp.be', class: 'back'
+        - if current_user
+          .right
+            = link_to 'logout', :log_out
+            = link_to 'all proposals', [:crew, :proposals]
       .intro
         %h1 ArrrrCamp#{ content_tag :small, '2014'}
         %h2

@@ -44,6 +44,7 @@ GEM
       multi_json
     arel (4.0.1)
     atomic (1.1.14)
+    bcrypt-ruby (3.1.2)
     builder (3.1.4)
     capistrano (2.15.5)
       highline
@@ -188,6 +189,7 @@ PLATFORMS
 
 DEPENDENCIES
   airbrake (~> 3.1.15)
+  bcrypt-ruby
   capo (~> 0.9.4)
   carrierwave (~> 0.9.0)
   coffee-rails (~> 4.0.0)
