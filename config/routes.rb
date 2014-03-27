@@ -5,6 +5,10 @@ Cfp::Application.routes.draw do
   namespace :crew do
     resources :proposals do
       resources :comments, only: [:create]
+      member do
+        patch :mark_as_favorite
+        patch :mark_as_read
+      end
     end
     root to: 'proposals#index'
   end

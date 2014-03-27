@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
 
   has_many :comments
+  has_many :proposal_scores
+  has_many :proposals, through: :proposal_scores
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
@@ -16,6 +18,18 @@ class User < ActiveRecord::Base
     else
       nil
     end
+  end
+
+  def favorite_proposals
+    proposals.where("proposal_scores.favorite = true")
+  end
+
+  def read_proposals
+    proposals.where("proposal_scores.read = true")
+  end
+
+  def unread_proposals
+    proposals.where("proposal_scores.read = false")
   end
 
   def encrypt_password
