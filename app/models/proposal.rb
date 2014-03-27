@@ -5,6 +5,8 @@ class Proposal < ActiveRecord::Base
   validates_presence_of :title, :email, :name, :description, :bio, :recidence, :motivation
 
   has_many :comments
+  has_many :proposal_scores
+  has_many :users, through: :proposal_scores
 
   before_create :generate_uniq_identifier
   before_save :scramble
@@ -16,6 +18,14 @@ class Proposal < ActiveRecord::Base
       self.send "#{attr}=", Base64::decode64(self.send(attr).to_s)
     end
     self
+  end
+
+  def read_by? user
+    proposal_scores.where(read: true, user: user).any?
+  end
+
+  def favoritted_by? user
+    proposal_scores.where(favorite: true, user: user).any?
   end
 
 private

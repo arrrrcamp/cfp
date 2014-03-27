@@ -1,12 +1,30 @@
+.well.well-sm
+  %h4
+    = current_user.favorite_proposals.count
+    Favoritted proposals
+  %h4
+    = current_user.read_proposals.count
+    Read proposals
+  %h4
+    = current_user.unread_proposals.count
+    Unread proposals
 %table.table.table-striped
   %thead
     %tr
       %th #
-      %th Title (# comments)
+      %th
+        Title
+        %span.badge comments
+      %th Read
+      %th Favorite
+      %th
   %tbody
     - @proposals.each_with_index do |proposal, index|
       %tr
         %td{style: 'width:10px'}= index + 1
         %td
-          = link_to proposal.title, [:crew, proposal]
+          = proposal.title
           %span.badge= proposal.comments.count
+        %td= proposal.read_by?(current_user) ? content_tag(:span, 'yes', class: 'label label-success') : 'no'
+        %td= proposal.favoritted_by?(current_user) ? content_tag(:span, 'yes', class: 'label label-success') : 'no'
+        %td= link_to 'Read', [:crew, proposal], class: 'btn btn-default btn-sm'
