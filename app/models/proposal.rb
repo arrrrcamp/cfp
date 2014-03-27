@@ -4,6 +4,8 @@ class Proposal < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   validates_presence_of :title, :email, :name, :description, :bio, :recidence, :motivation
 
+  has_many :comments
+
   before_create :generate_uniq_identifier
   before_save :scramble
 

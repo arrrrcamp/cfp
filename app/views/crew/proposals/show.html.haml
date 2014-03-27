@@ -8,3 +8,13 @@
 
 %h2 Motivation:
 = @proposal.motivation
+
+%h2 Comments
+- @proposal.comments.all.each do |comment|
+  .comment
+    .commenter= comment.user.username
+    .body= comment.body
+
+= simple_form_for [:crew, @proposal, @proposal.comments.build] do |form|
+  = form.input :body
+  = form.submit
