@@ -32,6 +32,10 @@ class User < ActiveRecord::Base
     Proposal.count - read_proposals.count
   end
 
+  def can_favorite?
+    (3 - favorite_proposals.count) > 0
+  end
+
   def encrypt_password
     if password.present?
       self.password_salt = BCrypt::Engine.generate_salt
