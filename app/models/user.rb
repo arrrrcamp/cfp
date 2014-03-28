@@ -28,8 +28,8 @@ class User < ActiveRecord::Base
     proposals.where("proposal_scores.read = true")
   end
 
-  def unread_proposals
-    proposals.where("proposal_scores.read = false")
+  def unread_proposals_count
+    Proposal.count - read_proposals.count
   end
 
   def encrypt_password
