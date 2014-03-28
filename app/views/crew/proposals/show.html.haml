@@ -10,13 +10,16 @@
 .well= @proposal.motivation
 
 .well{style: 'text-align:center;'}
-  - if current_user.can_favorite?
-    - if @proposal.favoritted_by?(current_user)
-      %span.label.label-success Marked as favorite
-    - else
-      = link_to 'mark as favorite', [:mark_as_favorite, :crew, :proposal], method: :patch, class: 'btn btn-default'
-  - else
+  - if @proposal.favoritted_by?(current_user)
+    %span.label.label-success Marked as favorite
+    = link_to 'remove favorite', [:unfavorite, :crew, :proposal], method: :patch, class: 'btn btn-default'
+
+  - if !@proposal.favoritted_by?(current_user) && current_user.can_favorite?
+    = link_to 'mark as favorite', [:mark_as_favorite, :crew, :proposal], method: :patch, class: 'btn btn-default'
+
+  - if !@proposal.favoritted_by?(current_user) && !current_user.can_favorite?
     You have no favorites left
+
   - if @proposal.read_by?(current_user)
     %span.label.label-success Marked as read
   - else

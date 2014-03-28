@@ -20,4 +20,12 @@ class Crew::ProposalsController < CrewController
     @score.save!
     redirect_to [:crew, @proposal]
   end
+
+  def unfavorite
+    @proposal = Proposal.find(params[:id])
+    @score = current_user.proposal_scores.find_by_proposal_id(@proposal.id)
+    @score.attributes = {read: true, favorite: false}
+    @score.save!
+    redirect_to [:crew, @proposal]
+  end
 end

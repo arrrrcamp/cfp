@@ -7,6 +7,7 @@ Cfp::Application.routes.draw do
       resources :comments, only: [:create]
       member do
         patch :mark_as_favorite
+        patch :unfavorite
         patch :mark_as_read
       end
     end
