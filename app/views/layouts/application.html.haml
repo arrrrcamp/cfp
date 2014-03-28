@@ -8,12 +8,12 @@
   %body
     .container
       .header
-        = link_to "<- back to ArrrrCamp", 'http://2014.arrrrcamp.be', class: 'back'
+        = link_to "<- back to ArrrrCamp", 'http://2014.arrrrcamp.be', class: 'back btn btn-sm btn-default'
         - if current_user
           .right
-            = link_to 'all proposals', [:crew, :proposals]
-            = link_to 'edit password', [:edit, :crew, :user]
-            = link_to 'logout', :log_out
+            = link_to 'all proposals', [:crew, :proposals], class: 'btn btn-sm btn-default'
+            = link_to 'edit password', [:edit, :crew, :user], class: 'btn btn-sm btn-default'
+            = link_to 'logout', :log_out, class: 'btn btn-sm btn-default'
       .intro
         %h1 ArrrrCamp#{ content_tag :small, '2014'}
         %h2
