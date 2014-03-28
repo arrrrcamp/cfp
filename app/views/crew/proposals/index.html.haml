@@ -1,6 +1,6 @@
 .well.well-sm
   %h4
-    = current_user.favorite_proposals.count
+    #{current_user.favorite_proposals.count} / #{ProposalScore::MAX_SCORE_PER_USER}
     Favoritted proposals
   %h4
     = current_user.read_proposals.count

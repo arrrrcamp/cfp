@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   end
 
   def can_favorite?
-    (3 - favorite_proposals.count) > 0
+    (ProposalScore::MAX_SCORE_PER_USER - favorite_proposals.count) > 0
   end
 
   def encrypt_password
