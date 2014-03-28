@@ -1,6 +1,6 @@
 class Crew::ProposalsController < CrewController
   def index
-    @proposals = Proposal.includes(:comments, :proposal_scores).order('proposal_scores.read', :created_at)
+    @proposals = Proposal.order('created_at DESC').includes(:comments)
   end
 
   def show
