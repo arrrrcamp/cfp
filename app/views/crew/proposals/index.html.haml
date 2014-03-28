@@ -19,9 +19,9 @@
       %th Favorite
       %th
   %tbody
-    - @proposals.each_with_index do |proposal, index|
+    - @proposals.each do |proposal|
       %tr
-        %td{style: 'width:10px'}= index + 1
+        %td{style: 'width:10px'}= proposal.id
         %td
           = proposal.title
           %span.badge= proposal.comments.count
