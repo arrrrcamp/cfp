@@ -10,6 +10,7 @@ Cfp::Application.routes.draw do
         patch :mark_as_read
       end
     end
+    resource :user
     root to: 'proposals#index'
   end
   get "log_out" => "sessions#destroy", :as => "log_out"
