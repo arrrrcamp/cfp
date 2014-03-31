@@ -36,4 +36,4 @@
 .well.well-sm
   = simple_form_for [:crew, @proposal, @proposal.comments.build] do |form|
     = form.input :body
-    = form.submit
+    = form.submit class: 'btn btn-primary'
