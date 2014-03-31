@@ -1,13 +1,13 @@
 %h3= @proposal.title
 
 %h4 Description
-.well= @proposal.description
+.well= markdown(@proposal.description)
 
 %h4 Tags
 .well= @proposal.tags
 
 %h4 Motivation
-.well= @proposal.motivation
+.well= markdown(@proposal.motivation)
 
 .well{style: 'text-align:center;'}
   - if @proposal.favoritted_by?(current_user)
