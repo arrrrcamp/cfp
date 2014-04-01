@@ -30,7 +30,7 @@
 - @proposal.comments.all.each do |comment|
   .panel.panel-default
     .panel-heading= comment.user.username
-    .panel-body= comment.body
+    .panel-body= simple_format comment.body
 
 %h5 Post a new comment
 .well.well-sm
