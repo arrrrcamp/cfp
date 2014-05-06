@@ -4,7 +4,7 @@ class ProposalNotifier < ActionMailer::Base
   def notify_speaker proposal
     @proposal = proposal.unscramble
 
-    mail  to: "#{@proposal.name} <#{@proposal.email}>",
+    mail  to: "#{@proposal.name.force_encoding('UTF-8')} <#{@proposal.email}>",
           subject: 'ArrrrCamp 2014 proposal received'
   end
 
