@@ -1,4 +1,11 @@
-= simple_form_for @proposal do |form|
-  = render form
-  .form-actions
-    = form.button :submit, 'Submit your proposal', class: 'btn btn-success'
+- if cfp_closed?
+  %p
+    Sorry, our call for proposals are closed. Our #{link_to('team', 'http://2014.arrrrcamp.be/blog/2014/04/08/introducing-the-proposal-selection-team/')} is very busy reading all proposals and hope to be able to select a fine crew.
+  %p
+    If you still want to come to ArrrrCamp, get a
+    =link_to 'ticket', 'https://ti.to/arrrrcamp/2014'
+- else
+  = simple_form_for @proposal do |form|
+    = render form
+    .form-actions
+      = form.button :submit, 'Submit your proposal', class: 'btn btn-success'

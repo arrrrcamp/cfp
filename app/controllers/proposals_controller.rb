@@ -1,4 +1,6 @@
 class ProposalsController < ApplicationController
+  before_filter :check_if_closed, only: :create
+
   def new
     @proposal = Proposal.new
   end
@@ -42,5 +44,9 @@ private
       :motivation,
       :avatar
     )
+  end
+
+  def check_if_closed
+    redirect_to(:root, notice: 'Sorry our CFP is closed.') if cfp_closed?
   end
 end
