@@ -7,6 +7,7 @@ class Proposal < ActiveRecord::Base
   has_many :comments
   has_many :proposal_scores
   has_many :favorites, -> { where favorite: true }, class_name: 'ProposalScore'
+  has_many :feedbacks
   has_many :users, through: :proposal_scores
 
   before_create :generate_uniq_identifier
