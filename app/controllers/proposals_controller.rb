@@ -35,6 +35,7 @@ private
       :name,
       :email,
       :title,
+      :summary,
       :description,
       :tags,
       :bio,
