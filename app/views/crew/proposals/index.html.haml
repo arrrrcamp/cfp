@@ -15,6 +15,7 @@
       %th
         Title
         %span.badge comments
+        %span.badge feedback
       %th Read
       %th Favorite
       %th
@@ -25,6 +26,7 @@
         %td
           = proposal.title
           %span.badge= proposal.comments.count
+          %span.badge= proposal.feedbacks.count
         %td= proposal.read_by?(current_user) ? content_tag(:span, 'yes', class: 'label label-success') : 'no'
         %td= proposal.favoritted_by?(current_user) ? content_tag(:span, 'yes', class: 'label label-success') : 'no'
         %td= link_to 'Read now', [:crew, proposal], class: 'btn btn-default btn-sm'
