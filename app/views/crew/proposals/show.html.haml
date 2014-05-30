@@ -33,7 +33,7 @@
       .panel-heading= feedback.user.username.capitalize
       .panel-body
         = simple_format feedback.content
-        = "-- #{feedback.user.name}"
+        = "-- #{feedback.user.username}"
 - else
   No feedback yet
 
