@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :proposal_scores
   has_many :proposals, through: :proposal_scores
+  has_many :feedbacks
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create

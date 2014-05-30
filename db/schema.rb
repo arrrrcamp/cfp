@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140530080117) do
+ActiveRecord::Schema.define(version: 20140530113505) do
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 20140530080117) do
 
   add_index "comments", ["proposal_id"], name: "index_comments_on_proposal_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "feedbacks", force: true do |t|
+    t.text     "content"
+    t.integer  "proposal_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "feedbacks", ["proposal_id"], name: "index_feedbacks_on_proposal_id", using: :btree
+  add_index "feedbacks", ["user_id"], name: "index_feedbacks_on_user_id", using: :btree
 
   create_table "proposal_scores", force: true do |t|
     t.integer  "user_id"
