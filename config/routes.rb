@@ -5,6 +5,7 @@ Cfp::Application.routes.draw do
   namespace :crew do
     resources :proposals do
       resources :comments, only: [:create]
+      resources :feedbacks, only: [:create]
       member do
         patch :mark_as_favorite
         patch :unfavorite

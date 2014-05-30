@@ -26,6 +26,23 @@
     or just
     = link_to 'mark as read', [:mark_as_read, :crew, :proposal], method: :patch, class: 'btn btn-default'
 
+%h4 Feedback (will be mailed to the author)
+- if @proposal.feedbacks.any?
+  - @proposal.feedbacks.each do |feedback|
+    .panel.panel-default
+      .panel-heading= feedback.user.username.capitalize
+      .panel-body
+        = simple_format feedback.content
+        = "-- #{feedback.user.name}"
+- else
+  No feedback yet
+
+%h5 Add your feedback
+.well.well-sm
+  = simple_form_for [:crew, @proposal, @proposal.feedbacks.build] do |form|
+    = form.input :content
+    = form.submit class: 'btn btn-warning'
+
 %h4 Comments
 - @proposal.comments.all.each do |comment|
   .panel.panel-default
