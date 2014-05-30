@@ -14,6 +14,6 @@
 = form.input :twitter, placeholder: '@arrrrcamp'
 = form.input :recidence, placeholder: 'Where do you live'
 = form.input :bio, as: :text, placeholder: 'We want to know all about you.'
-- if @proposal.avatar.present?
+- if @proposal.avatar.try(:url).present?
   = image_tag @proposal.avatar.icon.url
 = form.input :avatar, as: :file
